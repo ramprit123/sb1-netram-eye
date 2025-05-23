@@ -48,9 +48,7 @@ export default function Onboarding() {
         >
           <View style={styles.logoCircle}>
             <Image
-              source={{
-                uri: 'https://images.pexels.com/photos/1231265/pexels-photo-1231265.jpeg',
-              }}
+              source={require("@/assets/images/vision.png")}
               style={styles.logoImage}
             />
           </View>
@@ -131,14 +129,10 @@ export default function Onboarding() {
             />
           </View>
         </Animated.View>
+      
+        <Button title="Get Started" onPress={handleGetStarted} withArrow />
       </ScrollView>
 
-      <Animated.View
-        entering={SlideInDown.duration(400).delay(1200)}
-        style={styles.buttonContainer}
-      >
-        <Button title="Get Started" onPress={handleGetStarted} withArrow />
-      </Animated.View>
     </SafeAreaView>
   );
 }
@@ -203,6 +197,7 @@ const styles = StyleSheet.create({
   },
   permissionsContainer: {
     marginTop: 8,
+    display:"none"
   },
   permissionsTitle: {
     fontSize: 24,
